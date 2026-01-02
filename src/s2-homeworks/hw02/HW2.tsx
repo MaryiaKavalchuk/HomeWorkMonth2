@@ -39,8 +39,7 @@ function HW2() {
 
     // 6️⃣ Коллбек удаления
     const deleteAffairCallback = (_id: number) => {
-        setAffairs(deleteAffair(affairs, _id))
-    }
+        setAffairs(el => deleteAffair(el, _id))    }
 
     return (
       <div id={'hw2'}>
