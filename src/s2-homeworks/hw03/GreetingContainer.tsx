@@ -11,8 +11,8 @@ type GreetingContainerPropsType = {
 // чистые функции
 export const pureAddUser = (
   name: string,
-  setError: React.Dispatch<React.SetStateAction<string>>,
-  setName: React.Dispatch<React.SetStateAction<string>>,
+  setError: (error: string) => void,
+  setName: (name: string) => void,
   addUserCallback: (name: string) => void
 ) => {
     if (!name.trim()) {
@@ -25,7 +25,7 @@ export const pureAddUser = (
 
 export const pureOnBlur = (
   name: string,
-  setError: React.Dispatch<React.SetStateAction<string>>
+  setError: (error: string) => void
 ) => {
     if (!name.trim()) setError('Ошибка! Введите имя!')
 }
