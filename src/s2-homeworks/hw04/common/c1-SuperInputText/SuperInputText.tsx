@@ -26,7 +26,7 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
     value,
     onChange,
     onChangeText,
-    onKeyPress,
+    onKeyDown,
     onEnter,
     error,
     className,
@@ -41,7 +41,7 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
         onChangeText?.(e.currentTarget.value)
     }
     const onKeyPressCallback = (e: KeyboardEvent<HTMLInputElement>) => {
-        onKeyPress?.(e)
+        onKeyDown?.(e)
 
         onEnter && // если есть пропс onEnter
         e.key === 'Enter' && // и если нажата кнопка Enter
@@ -61,7 +61,7 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
             type={'text'}
             value={value}
             onChange={onChangeCallback}
-            onKeyPress={onKeyPressCallback}
+            onKeyDown={onKeyPressCallback}
             className={finalInputClassName}
             {...restProps}
           />
