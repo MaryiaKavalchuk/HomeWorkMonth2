@@ -24,18 +24,19 @@ const Stand = () => {
                 {/*инпут с ошибкой:*/}
                 <div>
                     <SuperInputText
-                        id={'hw4-super-input-with-error'}
-                        value={stateForAllInputs}
-                        onChangeText={setValue}
-                        error={error}
-                        onEnter={() => {
-                            setError(
-                                stateForAllInputs.trim()
-                                    ? ''
-                                    : 'Error'
-                            )
-                            setValue('')
-                        }}
+                      id={'hw4-super-input-with-error'}
+                      value={stateForAllInputs}
+                      onChange={(e) => setValue(e.currentTarget.value)}
+                      onChangeText={setValue}
+                      error={error}
+                      onEnter={() => {
+                          setError(
+                            stateForAllInputs.trim()
+                              ? ''
+                              : 'Error'
+                          )
+                          setValue('')
+                      }}
                     />
                 </div>
             </div>
