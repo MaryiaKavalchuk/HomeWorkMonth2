@@ -19,6 +19,7 @@ const Stand = () => {
                         id={'hw4-super-input-like-old'}
                         value={stateForAllInputs}
                         onChange={(e) => setValue(e.currentTarget.value)}
+
                     />
                 </div>
                 {/*инпут с ошибкой:*/}
@@ -26,7 +27,6 @@ const Stand = () => {
                     <SuperInputText
                       id={'hw4-super-input-with-error'}
                       value={stateForAllInputs}
-                      onChange={(e) => setValue(e.currentTarget.value)}
                       onChangeText={setValue}
                       error={error}
                       onEnter={() => {

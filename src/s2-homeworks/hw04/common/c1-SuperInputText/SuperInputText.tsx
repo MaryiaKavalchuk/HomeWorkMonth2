@@ -23,7 +23,6 @@ type SuperInputTextPropsType = Omit<DefaultInputPropsType, 'type'> & {
 
 const SuperInputText: React.FC<SuperInputTextPropsType> = (
   {
-    value,
     onChange,
     onChangeText,
     onKeyDown,
@@ -36,11 +35,8 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
   }
 ) => {
   const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
-    if (onChangeText) {
-      onChangeText(e.currentTarget.value)
-    } else {
-      onChange?.(e)
-    }
+    onChange?.(e)
+    onChangeText?.(e.currentTarget.value)
   }
     const onKeyPressCallback = (e: KeyboardEvent<HTMLInputElement>) => {
         onKeyDown?.(e)
@@ -61,12 +57,10 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
           <input
             id={id}
             type={'text'}
-            {...restProps}
-            value={value}
             onChange={onChangeCallback}
             onKeyDown={onKeyPressCallback}
             className={finalInputClassName}
-
+            {...restProps}
           />
             <span
                 id={id ? id + '-span' : undefined}
