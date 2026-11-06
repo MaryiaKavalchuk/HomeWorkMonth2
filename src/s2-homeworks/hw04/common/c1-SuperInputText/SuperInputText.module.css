@@ -1,20 +1,47 @@
-.input:focus {
+.inputWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .input {
+  width: 200px;
+  height: 36px;
+  padding: 0 10px;
+
+  box-sizing: border-box;
+
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+
+  border: 2px solid #06c;
+  border-radius: 3px;
+
+  outline: none;
+  background: white;
 }
 
-.inputWrapper {
+.input:focus {
+  border-color: #0059b3;
 }
 
 .superInput {
+  border-color: #06c;
 }
 
 .errorInput {
+  border-color: #ff0000;
 }
 
 .errorInput:focus {
+  border-color: #ff0000;
 }
 
 .error {
+  min-height: 18px;
+  margin-top: 4px;
+
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  color: #ff0000;
 }
